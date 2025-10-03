@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Domino Divination - Fortune Telling with Digital Dominoes</title>
+    
+    <!-- Enhanced Meta Tags -->
+    <meta name="Rating" content="general" />
+    <meta name="DESCRIPTION" content="Practice domino divination with our digital domino fortune telling tool. Draw 1-3 dominoes to receive detailed interpretations about love, money, career, and life guidance. Each domino combination reveals unique insights." />
+    <meta name="KEYWORDS" content="domino divination, domino fortune telling, domino reading, digital dominoes, fortune telling dominoes, divination tool, domino meanings, domino oracle, domino predictions" />
+    <meta name="author" content="Radius.Center" />
+    <meta name="distribution" content="Global" />
+    <meta name="robots" content="FOLLOW,INDEX" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://radius.center/dominos/dominos.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Domino Divination - Fortune Telling with Digital Dominoes">
+    <meta property="og:description" content="Draw digital dominoes for fortune telling and divination guidance on love, money, and life decisions">
+    <meta property="og:url" content="https://radius.center/dominos/dominos.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Radius.Center">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Domino Divination - Digital Fortune Telling">
+    <meta name="twitter:description" content="Fortune telling with digital dominoes - get guidance on love, money, and life decisions">
+    
+    <!-- Language and Hreflang -->
+    <meta name="language" content="en">
+    <link rel="alternate" hreflang="en" href="https://radius.center/dominos/dominos.html">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Domino Divination Tool",
+      "description": "Digital domino fortune telling application for divination and guidance",
+      "url": "https://radius.center/dominos/dominos.html",
+      "applicationCategory": "Entertainment",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Radius.Center",
+        "url": "https://radius.center"
+      },
+      "keywords": ["domino divination", "fortune telling", "domino reading", "digital dominoes"],
+      "genre": ["Divination", "Fortune Telling", "Entertainment"]
+    }
+    </script>
+    
+    <link rel="SHORTCUT ICON" href="favicon.ico" />
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            font-size: 24px;
+            transition: background-color 0.5s; /* add transition for dark mode */
+        }
+        .hidden-title {
+		    display: none;
+		}
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header span {
+            margin-right: 10px;
+        }
+        .domino-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .domino {
+            margin: 10px;
+            width: 50px;
+            height: 100px;
+            border: 0px solid black;
+            border-radius: 5px;
+            background-color: white;
+            cursor: pointer;
+        }
+        .domino img {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        select {
+            font-size: 24px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        /* add dark mode styles */
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        .dark-mode .domino {
+            background-color: #444;
+        }
+        .dark-mode select,
+        .dark-mode button {
+            background-color: #444;
+            color: white;
+            border-color: #555;
+        }
+        /*.dark-mode .domino img {
+            filter: invert(0.85) hue-rotate(180deg); // invert image colors in dark mode
+        }*/
+        /* add toggle switch styles */
+        .toggle-switch {
+            position: absolute;
+            top: 20px;
+            right: 90px;
+            display: inline-block;
+            width: 50px;
+            height: 25px;
+            background-color: #ccc;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        .toggle-switch::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 21px;
+            height: 21px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: transform 0.5s;
+        }
+        .toggle-switch.active {
+            background-color: #5555ff;
+        }
+        .toggle-switch.active::before {
+            transform: translateX(25px);
+        }
+        .help-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            padding: 5px 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+        .help-btn:hover {
+            background-color: #e0e0e0;
+        }
+        .dark-mode .help-btn {
+            background-color: #444;
+            color: white;
+            border-top: 2px solid #666;
+            border-left: 2px solid #666;
+            border-right: 2px solid #222;
+            border-bottom: 2px solid #222;
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+<div class="hidden-title"><center><h1>Dominos</h1></center></p></div>
+    <div class="container">
+        <div class="header">
+            <div class="button-container">
+                <span>Number of Dominos:</span>
+                <select id="domino-count">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;<button id="reset-button" style="font-size: 24px;">Reset</button>
+                <div class="toggle-switch" id="dark-mode-toggle"></div>
+            </div>
+        </div>
+        <a href="help.html" class="help-btn" title="Help Documentation" aria-label="Help Documentation">?</a>
+        <div class="domino-container" id="domino-container"></div>
+        <ol id="description-list"></ol>
+
+<script>
+const dominoCountSelect = document.getElementById('domino-count');
+    const dominoContainer = document.getElementById('domino-container');
+    const resetButton = document.getElementById('reset-button');
+    const descriptionList = document.createElement('ol');
+    descriptionList.id = 'description-list';
+    document.querySelector('.container').appendChild(descriptionList);
+
+    const dominoImages = [
+    	{ src: "0-0.png", description: "[0|0] This is the least auspicious domino. It means that you should take care of your money and possessions. Beware of theft and loss. </p>" },
+        { src: "0-1.png", description: "[0|<font color=#FC3F02>1</font>] A stranger could provide help or information. You will be happy with the news. Be prepared to move forward. Do not hold back unnecessarily. </p>" },
+        { src: "0-2.png", description: "[0|<font color=#08B1F7>2</font>] This domino relates to misfortune and bad luck. If a woman chooses this domino, the misfortune relates to a male in her life. Oddly enough, this is a highly auspicious domino if you are planning to travel. </p>" },
+        { src: "0-3.png", description: "[0|<font color=#016C01>3</font>] This domino indicates disagreements. Stand up for yourself but avoid antagonizing others. Be sure of your facts before opening your mouth. </p>" },
+        { src: "0-4.png", description: "[0|<font color=#7FEB10>4</font>] This domino indicates a disappointment. Do not reveal too much to others. Think carefully before moving ahead. </p>" },
+        { src: "0-5.png", description: "[0|<font color=#B801DE>5</font>] This domino is an indication to seek advice from someone who may be able to resolve a problem or answer a specific question. Think first. Do not take any unnecessary risks. </p>" },
+        { src: "0-6.png", description: "[0|<font color=#F8CB08>6</font>] This domino is usually considered an unhappy one. It can portend a death, but usually it is a sign that something is ending to make way for the new. You may find yourself the subject of malicious gossip. </p>" },
+        { src: "1-0.png", description: "[<font color=#FC3F02>1</font>|0] A stranger could provide help or information. You will be happy with the news. Be prepared to move forward. Do not hold back unnecessarily. </p>" },
+        { src: "1-1.png", description: "[<font color=#FC3F02>1</font>|<font color=#FC3F02>1</font>] This indicates happiness in love and marriage. It promises harmony and peace of mind. It also relates to financial security. </p>" },
+        { src: "1-2.png", description: "[<font color=#FC3F02>1</font>|<font color=#08B1F7>2</font>] This is a fortunate domino. It indicates love and marriage for single women, and a fun-filled time for single men. It suggests caution in business. </p>" },
+        { src: "1-3.png", description: "[<font color=#FC3F02>1</font>|<font color=#016C01>3</font>] This domino is an indication to avoid gossip, and the company of people who constantly put others down. Make friends with positive-minded people and avoid flatterers. </p>" },
+        { src: "1-4.png", description: "[<font color=#FC3F02>1</font>|<font color=#7FEB10>4</font>] This is an indication of future prosperity and immediate happiness. You can make new friends now, as long as you are prepared to make the first move. </p>" },
+        { src: "1-5.png", description: "[<font color=#FC3F02>1</font>|<font color=#B801DE>5</font>] This domino indicates a busy and happy social life. You have the potential to progress in your career as long as you pay attention to all the details. </p>" },
+        { src: "1-6.png", description: "[<font color=#FC3F02>1</font>|<font color=#F8CB08>6</font>] This is a sign of success in relationships. Be attentive to the needs of younger family members and be prepared to listen. Give advice only if it is asked for. This domino can be an indicator of a second marriage. </p>" },
+        { src: "2-0.png", description: "[<font color=#08B1F7>2</font>|0] This domino relates to misfortune and bad luck. If a woman chooses this domino, the misfortune relates to a male in her life. Oddly enough, this is a highly auspicious domino if you are planning to travel. </p>" },
+        { src: "2-1.png", description: "[<font color=#08B1F7>2</font>|<font color=#FC3F02>1</font>] This is a fortunate domino. It indicates love and marriage for single women, and a fun-filled time for single men. It suggests caution in business. </p>" },
+        { src: "2-2.png", description: "[<font color=#08B1F7>2</font>|<font color=#08B1F7>2</font>] This is an excellent domino that indicates happiness, harmony, and success at home and in business. Some unexpected news will bring great joy. </p>" },
+        { src: "2-3.png", description: "[<font color=#08B1F7>2</font>|<font color=#016C01>3</font>] This domino indicates good fortune in love, family life, and career. It is a good time to travel. </p>" },
+        { src: "2-4.png", description: "[<font color=#08B1F7>2</font>|<font color=#7FEB10>4</font>] This domino indicates a change is in store. Be particularly careful with money matters and avoid any extravagances. Avoid people you do not trust. </p>" },
+        { src: "2-5.png", description: "[<font color=#08B1F7>2</font>|<font color=#B801DE>5</font>] This domino counsels caution. Do not rush into anything, as you might make a decision you later regret. Think carefully before acting. </p>" },
+        { src: "2-6.png", description: "[<font color=#08B1F7>2</font>|<font color=#F8CB08>6</font>] This domino is excellent for people who are honest. It is a sign that their fortunes will improve. It indicates that dishonest people will get caught out. </p>" },
+        { src: "3-0.png", description: "[<font color=#016C01>3</font>|0] This domino indicates disagreements. Stand up for yourself but avoid antagonizing others. Be sure of your facts before opening your mouth. </p>" },
+        { src: "3-1.png", description: "[<font color=#016C01>3</font>|<font color=#FC3F02>1</font>] This domino is an indication to avoid gossip, and the company of people who constantly put others down. Make friends with positive-minded people and avoid flatterers. </p>" },
+        { src: "3-2.png", description: "[<font color=#016C01>3</font>|<font color=#08B1F7>2</font>] This domino indicates good fortune in love, family life, and career. It is a good time to travel. </p>" },
+        { src: "3-3.png", description: "[<font color=#016C01>3</font>|<font color=#016C01>3</font>] This domino is an indication of money coming your way. You are likely to receive recognition for what you have done. </p>" },
+        { src: "3-4.png", description: "[<font color=#016C01>3</font>|<font color=#7FEB10>4</font>] This domino promises a happy life. Share your thoughts and feelings with others. Respect other people�s confidences. </p>" },
+        { src: "3-5.png", description: "[<font color=#016C01>3</font>|<font color=#B801DE>5</font>] This domino indicates a slow, but steady, improvement financially. It marks a busy time at work. Take time off when possible to relax and unwind. </p>" },
+        { src: "3-6.png", description: "[<font color=#016C01>3</font>|<font color=#F8CB08>6</font>] This is a very auspicious domino for love and for money. It indicates a time to ask for what you want. </p>" },
+        { src: "4-0.png", description: "[<font color=#7FEB10>4</font>|0] This domino indicates a disappointment. Do not reveal too much to others. Think carefully before moving ahead. </p>" },
+        { src: "4-1.png", description: "[<font color=#7FEB10>4</font>|<font color=#FC3F02>1</font>] This is an indication of future prosperity and immediate happiness. You can make new friends now, as long as you are prepared to make the first move. </p>" },
+        { src: "4-2.png", description: "[<font color=#7FEB10>4</font>|<font color=#08B1F7>2</font>] This domino indicates a change is in store. Be particularly careful with money matters and avoid any extravagances. Avoid people you do not trust. </p>" },
+        { src: "4-3.png", description: "[<font color=#7FEB10>4</font>|<font color=#016C01>3</font>] This domino promises a happy life. Share your thoughts and feelings with others. Respect other people�s confidences. </p>" },
+        { src: "4-4.png", description: "[<font color=#7FEB10>4</font>|<font color=#7FEB10>4</font>] This domino indicates a time for happiness and laughter. It is good for social activities, making new friends, and spending time with loved ones. It indicates a slow period as far as work and career are concerned. </p>" },
+        { src: "4-5.png", description: "[<font color=#7FEB10>4</font>|<font color=#B801DE>5</font>] This domino indicates caution in investments.  Take professional advice when necessary, and do not allow yourself to become overextended. </p>" },
+        { src: "4-6.png", description: "[<font color=#7FEB10>4</font>|<font color=#F8CB08>6</font>] This domino indicates a happy and contented home and family life. A younger family member might seek advice. </p>" },
+        { src: "5-0.png", description: "[<font color=#B801DE>5</font>|0] This domino is an indication to seek advice from someone who may be able to resolve a problem or answer a specific question. Think first. Do not take any unnecessary risks. </p>" },
+        { src: "5-1.png", description: "[<font color=#B801DE>5</font>|<font color=#FC3F02>1</font>] This domino indicates a busy and happy social life. You have the potential to progress in your career as long as you pay attention to all the details. </p>" },
+        { src: "5-2.png", description: "[<font color=#B801DE>5</font>|<font color=#08B1F7>2</font>] This domino counsels caution. Do not rush into anything, as you might make a decision you later regret. Think carefully before acting. </p>" },
+        { src: "5-3.png", description: "[<font color=#B801DE>5</font>|<font color=#016C01>3</font>] This domino indicates a slow, but steady, improvement financially. It marks a busy time at work. Take time off when possible to relax and unwind. </p>" },
+        { src: "5-4.png", description: "[<font color=#B801DE>5</font>|<font color=#7FEB10>4</font>] This domino indicates caution in investments.  Take professional advice when necessary, and do not allow yourself to become overextended. </p>" },
+        { src: "5-5.png", description: "[<font color=#B801DE>5</font>|<font color=#B801DE>5</font>] This domino is a sign of success in all things. You are likely to make the right decisions and be appreciated by others. </p>" },
+        { src: "5-6.png", description: "[<font color=#B801DE>5</font>|<font color=#F8CB08>6</font>] This domino indicates that hard work, determination, and persistence will pay off. Do not give up. </p>" },
+        { src: "6-0.png", description: "[<font color=#F8CB08>6</font>|0] This domino is usually considered an unhappy one. It can portend a death, but usually it is a sign that something is ending to make way for the new. You may find yourself the subject of malicious gossip. </p>" },
+        { src: "6-1.png", description: "[<font color=#F8CB08>6</font>|<font color=#FC3F02>1</font>] This is a sign of success in relationships. Be attentive to the needs of younger family members and be prepared to listen. Give advice only if it is asked for. This domino can be an indicator of a second marriage. </p>" },
+        { src: "6-2.png", description: "[<font color=#F8CB08>6</font>|<font color=#08B1F7>2</font>] This domino is excellent for people who are honest. It is a sign that their fortunes will improve. It indicates that dishonest people will get caught out. </p>" },
+        { src: "6-3.png", description: "[<font color=#F8CB08>6</font>|<font color=#016C01>3</font>] This is a very auspicious domino for love and for money. It indicates a time to ask for what you want. </p>" },
+        { src: "6-4.png", description: "[<font color=#F8CB08>6</font>|<font color=#7FEB10>4</font>] This domino indicates a happy and contented home and family life. A younger family member might seek advice. </p>" },
+        { src: "6-5.png", description: "[<font color=#F8CB08>6</font>|<font color=#B801DE>5</font>] This domino indicates that hard work, determination, and persistence will pay off. Do not give up. </p>" },
+        { src: "6-6.png", description: "[<font color=#F8CB08>6</font>|<font color=#F8CB08>6</font>] This domino relates to speculation and indicates that you can take a chance with a strong likelihood of success. Trust your feelings. </p>" },
+    ];
+
+    let currentDominoCount = 1;
+    let clickedDominos = [];
+    let clickOrder = [];
+
+    function renderDominos() {
+        dominoContainer.innerHTML = '';
+        descriptionList.innerHTML = '';
+        clickedDominos = new Array(currentDominoCount).fill(false);
+        clickOrder = [];
+        
+        for (let i = 0; i < currentDominoCount; i++) {
+            const domino = document.createElement('div');
+            domino.classList.add('domino');
+            domino.innerHTML = '<img src="0-0.png">';
+            domino.addEventListener('click', () => handleDominoClick(i, domino));
+            dominoContainer.appendChild(domino);
+        }
+    }
+
+    function handleDominoClick(index, dominoElement) {
+        if (clickedDominos[index]) return; // Prevent clicking more than once
+
+        const randomIndex = Math.floor(Math.random() * dominoImages.length);
+        const selectedDomino = dominoImages[randomIndex];
+        dominoElement.innerHTML = `<img src="${selectedDomino.src}">`;
+        
+        addDescription(selectedDomino.description);
+        clickedDominos[index] = true;
+        clickOrder.push(index);
+    }
+
+function addDescription(description) {
+    if (clickOrder.length <= currentDominoCount) {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = description; // Parse the description as HTML
+        descriptionList.appendChild(listItem);
+    }
+}
+    dominoCountSelect.addEventListener('change', (e) => {
+        currentDominoCount = parseInt(e.target.value);
+        localStorage.setItem('dominoCount', e.target.value);
+        renderDominos();
+    });
+
+    resetButton.addEventListener('click', () => {
+        renderDominos();
+    });
+
+    // Load saved domino count on page load
+    const savedDominoCount = localStorage.getItem('dominoCount');
+    if (savedDominoCount) {
+        dominoCountSelect.value = savedDominoCount;
+        currentDominoCount = parseInt(savedDominoCount);
+    }
+
+    renderDominos();
+    
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    let isDarkMode = false;
+
+    darkModeToggle.addEventListener('click', () => {
+        isDarkMode = !isDarkMode;
+        document.body.classList.toggle('dark-mode', isDarkMode);
+        darkModeToggle.classList.toggle('active', isDarkMode);
+        localStorage.setItem('darkMode', isDarkMode);
+    });
+    
+    // Apply saved dark mode preference on page load
+    if (localStorage.getItem('darkMode') === 'true') {
+        isDarkMode = true;
+        document.body.classList.add('dark-mode');
+        darkModeToggle.classList.add('active');
+    }
+</script>
+</div>
+</body>
+</html>
