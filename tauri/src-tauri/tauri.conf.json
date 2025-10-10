@@ -1,0 +1,80 @@
+{
+  "$schema": "https://schema.tauri.app/config/2.0",
+  "productName": "Dominos",
+  "version": "1.0.0",
+  "identifier": "center.radius.dominos",
+  "build": {
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "",
+    "devUrl": "../src",
+    "frontendDist": "../src"
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["msi", "nsis", "deb", "rpm", "dmg", "app"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": "",
+      "wix": {
+        "language": "en-US"
+      },
+      "nsis": {
+        "installerIcon": "icons/icon.ico",
+        "installMode": "perUser",
+        "languages": ["en-US"],
+        "displayLanguageSelector": false
+      }
+    },
+    "macOS": {
+      "frameworks": [],
+      "minimumSystemVersion": "10.13",
+      "exceptionDomain": "",
+      "signingIdentity": null,
+      "providerShortName": null,
+      "entitlements": null
+    },
+    "linux": {
+      "deb": {
+        "depends": []
+      },
+      "rpm": {
+        "depends": []
+      }
+    },
+    "resources": [],
+    "externalBin": [],
+    "copyright": "Copyright © 2025 Radius.Center",
+    "category": "Utility",
+    "shortDescription": "Domino Divination - Fortune Telling Tool",
+    "longDescription": "Practice domino divination with our digital domino fortune telling tool. Draw 1-3 dominoes to receive detailed interpretations about love, money, career, and life guidance. Each domino combination reveals unique insights into your future."
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Dominos - Fortune Telling",
+        "width": 900,
+        "height": 800,
+        "resizable": true,
+        "fullscreen": false,
+        "center": true,
+        "minWidth": 600,
+        "minHeight": 500
+      }
+    ],
+    "security": {
+      "csp": null,
+      "assetProtocol": {
+        "enable": true,
+        "scope": ["**"]
+      }
+    }
+  }
+}
